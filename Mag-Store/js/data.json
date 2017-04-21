@@ -1,0 +1,33 @@
+{
+  "trending": {
+          "data": {
+            "images":[
+              {
+                "url": "",
+                "title": "",
+                "price": ""
+              },
+              {
+                "url": "",
+                "title": "",
+                "price": ""
+              },
+              {
+                "url": "",
+                "title": "",
+                "price": ""
+              },
+              {
+                "url": "",
+                "title": "",
+                "price": ""
+              },
+              {
+                "url": "",
+                "title": "",
+                "price": ""
+              }
+            ]
+          }
+        }
+}

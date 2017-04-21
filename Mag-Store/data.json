@@ -1,0 +1,68 @@
+{
+  "trending": {
+    "data": {
+      "images":[
+        {
+          "url": "abc",
+          "title": "mag",
+          "price": "12345"
+        },
+        {
+          "url": "qwe",
+          "title": "ddddd",
+          "price": "123456"
+        }
+      ]
+    }
+  },
+  "entertainment": {
+    "data": {
+      "images":[
+        {
+          "url": "abc",
+          "title": "mag",
+          "price": "12345"
+        },
+        {
+          "url": "qwe",
+          "title": "ddddd",
+          "price": "123456"
+        }
+      ]
+    }
+  },
+"travel": {
+    "data": {
+      "images":[
+        {
+          "url": "abc",
+          "title": "mag",
+          "price": "12345"
+        },
+        {
+          "url": "qwe",
+          "title": "ddddd",
+          "price": "123456"
+        }
+      ]
+    }
+  },
+
+  "food": {
+    "data": {
+      "images":[
+        {
+          "url": "abc",
+          "title": "mag",
+          "price": "12345"
+        },
+        {
+          "url": "qwe",
+          "title": "ddddd",
+          "price": "123456"
+        }
+      ]
+    }
+  }
+ 
+}
