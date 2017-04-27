@@ -17,166 +17,6 @@
 				<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     	  <!-- its for js files -->
     	 	 <script type="text/javascript" src ="./js/tabConatins.js"></script>
-			  <style> 
-  #cart-pop-up-display{
-        display: none;
-  }
- .shopping-cart {
-		width: 750px;
-		height: 435px;
-		/*margin: 80px auto;*/
-		background: #43484D;
-		box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
-		border-radius: 6px;
-		/*z-index: 9999;*/
-		/*display: flex;*/
-	
-		background-color:aliceblue;
-		position: fixed;
-		z-index: 1;
-		margin: 8% 2% 3% 22%;
-		overflow : auto;
-}
-
-.shopping-cart-header {
-  height: 30px;
-  border-bottom: 1px solid #E1E8EE;
-  padding: 20px 30px;
-  color: black;
-  font-size: 27px;
-  font-weight: 400;
-  display: inline-flex;
-  position: fixed;
-  z-index: 1;
-  background-color: lightseagreen;
-  width: 51%;
-}
-.cart-container{
-    position: absolute;
-    /* overflow: auto; */
-    margin-top: 10%;
-}
-.checkout-button{
-   display: inline-flex;
-    /* width: 100%; */
-    margin-left: auto;
-}
-.checkout-button .button-input{
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.cart-item-list {
-  padding: 20px 30px;
-  /*height: 120px;*/
-  display: flex;
-}
-.cart-item-list .image img{
-	height: 80px;
-}
-
-.cart-item-list:nth-child(2) {
-  border-top:  1px solid #E1E8EE;
-  border-bottom:  1px solid #E1E8EE;
-}
-
-/* Buttons -  Delete and Like */
-.buttons {
-  position: relative;
-  padding-top: 30px;
-  margin-left: 123px;
-}
-
-.delete-btn {
-  display: inline-block;
-  cursor: pointer;
-  width: 18px;
-  height: 17px;
-  background: url("./images/delete-icn.svg") no-repeat center;
-  margin-right: 20px;
-}
-
-
-.is-active {
-  animation-name: animate;
-  animation-duration: .8s;
-  animation-iteration-count: 1;
-  animation-timing-function: steps(28);
-  animation-fill-mode: forwards;
-}
-
-
-/* Product Image */
-.image {
-  margin-right: 70px;
-}
-
-/* Product Description */
-.description {
-  padding-top: 10px;
-  margin-right: 60px;
-  width: 115px;
-}
-
-.description span {
-  display: block;
-  font-size: 14px;
-  color: #43484D;
-  font-weight: 400;
-}
-
-.description span:first-child {
-  margin-bottom: 5px;
-}
-.description span:last-child {
-  font-weight: 300;
-  margin-top: 8px;
-  color: #86939E;
-}
-
-/* Product Quantity */
-.quantity {
-  padding-top: 20px;
-  margin-right: 24px;
-}
-.quantity input {
-  -webkit-appearance: none;
-  border: none;
-  text-align: center;
-  width: 32px;
-  font-size: 16px;
-  color: #43484D;
-  font-weight: 300;
-}
-
-button[class*=btn] {
-  width: 30px;
-  height: 30px;
-  background-color: #E1E8EE;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-}
-.minus-btn img {
-  margin-bottom: 3px;
-}
-.plus-btn img {
-  margin-top: 2px;
-}
-button:focus,input:focus {
-  outline:0;
-}
-
-/* Total Price */
-.total-price {
-  width: 83px;
-  padding-top: 27px;
-  text-align: center;
-  font-size: 16px;
-  color: #43484D;
-  font-weight: 300;
-}
-</style>
 </head>
 		  
 <body>
@@ -185,30 +25,31 @@ button:focus,input:focus {
     <div>
     <header>
        <div class="header">
-		 <div class="menu-for-device">
-			 <span onclick="openMenu()"><i class="fa fa-bars" aria-hidden="true"></i></span>
-			 <div id="myDropdown" class="dropdown-content">
-				<!--<a href="#treding">Home</a>
-				<a href="#about">About</a>
-				<a href="#contact">Contact</a>-->
-			</div>
-		 </div>
-		 <!--<div id="menu-list" class="menu-list">
-			
-		 </div>-->
-
-		  <div class="logo">
-			   <img src="./images/timeinc_logo.svg"  alt="Time inc" width="100" height="60">
-		  </div>
-      <div class="search-box">
-         <input type="text" name="search" placeholder="Search.."> 
- 			   <i class="fa fa-search" title="Search Product" aria-hidden="true"></i> 
-		  </div>
-		  <div class="item-cart">
-          <span class="cart-text">MY CART</span>
-          <span id ="total-item-cart">0 </span>
-		      <i class="fa fa-shopping-cart" title="Your CART Item" aria-hidden="true" onclick="displayCartItem()"></i>
-		  </div>
+         <!-- its for device-->
+          <div class="menu-for-device">
+            <div class="dropdown">
+              <span onclick="menuList()" ><i class="fa fa-bars dropbtn" aria-hidden="true"></i></span>
+            <div id="myDropdown" class="dropdown-content tabs">
+                <li><a href="#trending" >Trending</a></li>
+                <li><a href="#entertainment" >Entertainment</a></li>
+                <li><a href="#travel">Travel</a></li>
+                <li><a href="#food">Food</a></li>
+            </div>
+            </div>
+          </div>
+        
+          <div class="logo">
+            <img src="./images/timeinc_logo.svg"  alt="Time inc" width="100" height="60">
+          </div>
+          <div class="search-box">
+            <input type="text" name="search" placeholder="Search.."> 
+            <i class="fa fa-search" title="Search Product" aria-hidden="true"></i> 
+          </div>
+          <div class="item-cart">
+              <span class="cart-text">MY CART</span>
+              <span id ="total-item-cart">0 </span>
+              <i class="fa fa-shopping-cart" title="Your CART Item" aria-hidden="true" onclick="displayCartItem()"></i>
+          </div>
      </div>
    </header>
    <!--second header div-->
@@ -219,7 +60,7 @@ button:focus,input:focus {
 		      </div>
 		   <!-- its for search box-->
 		   
-	   </div>
+	    </div>
          <!--  nav bar start -->
       <nav>
 				<div class="sub-header">
@@ -247,6 +88,7 @@ button:focus,input:focus {
        <section class = "block">
 		    <section class="images-container" id="trending" > 
 		        <!-- its for second tab1 -->
+           
 	        </section>
 	            <!-- its for second tab2 -->
 	        <section class="images-container" id="entertainment" > 
@@ -263,130 +105,22 @@ button:focus,input:focus {
        </section>
 	   
 	   <div class="shopping-cart" id = "cart-pop-up-display">
-      <!-- Title - header -->
-      <div class="shopping-cart-header">
-          <div>Your Shopping Cart</div>
-          <div class="checkout-button">
-            SubTotal &nbsp; &nbsp;
-            <!--<input name="proceedToCheckout" class="button-input" type="button" value="Proceed to checkout">-->
-            <input type="button"  class="button-input" title="Proceed to checkout" value="Proceed to checkout">
-          </div> 
-      </div>
-     
-     <!--product container-->
-     <div class="cart-container">
-        
-         <!-- Product #1 -->
-        <div class="cart-item-list">
-          <!--display image product-->
-          <div class="image">
-            <img src="./images/01.jpg" alt="" />
-          </div>
-            <!--product description-->
-          <div class="description">
-            <span>this is image</span>
-            <span>pics of prodcut</span>
-            <span>girls</span>
-          </div>
-          <!--quantity buttons-->
-          <div class="quantity">
-        <!--increse button-->
-            <button class="plus-btn" type="button" name="button">
-              <img src="./images/plus.svg" alt="" />
-            </button>
-        <!-- display product counter-->
-            <input type="text" name="name" value="1">
-        <!--decrese button-->
-            <button class="minus-btn" type="button" name="button">
-              <img src="./images/minus.svg" alt="" />
-            </button>
-          </div>
+     <!--<div class="modal-pop-up" />     -->
+       </div>
 
-          <div class="total-price">$549</div>
-      <!--its cancel button(remove product)-->
-      <div class="buttons">
-            <span class="delete-btn"></span>
-          </div>
-        </div>
-
-	  <!-- Product #2 -->
-      <div class="cart-item-list">
-        <!--display image product-->
-		<div class="image">
-          <img src="./images/pe.jpg" alt="" />
-        </div>
-          <!--product description-->
-        <div class="description">
-          <span>this is image</span>
-          <span>pics of prodcut</span>
-          <span>girls</span>
-        </div>
-        <!--quantity buttons-->
-        <div class="quantity">
-			<!--increse button-->
-          <button class="plus-btn" type="button" name="button">
-            <img src="./images/plus.svg" alt="" />
-          </button>
-		  <!-- display product counter-->
-          <input type="text" name="name" value="1">
-		  <!--decrese button-->
-          <button class="minus-btn" type="button" name="button">
-            <img src="./images/minus.svg" alt="" />
-          </button>
-        </div>
-
-        <div class="total-price">$549</div>
-		<!--its cancel button(remove product)-->
-		<div class="buttons">
-          <span class="delete-btn"></span>
-        </div>
-      </div>
-	  <!-- Product #3 -->
-      <div class="cart-item-list">
-        <!--display image product-->
-		    <div class="image">
-          <img src="./images/ew.jpg" alt="" />
-        </div>
-          <!--product description-->
-        <div class="description">
-          <span>this is image</span>
-          <span>pics of prodcut</span>
-          <span>girls</span>
-        </div>
-        <!--quantity buttons-->
-        <div class="quantity">
-			<!--increse button-->
-          <button class="plus-btn" type="button" name="button">
-            <img src="./images/plus.svg" alt="" />
-          </button>
-		  <!-- display product counter-->
-          <input type="text" name="name" value="1">
-		  <!--decrese button-->
-          <button class="minus-btn" type="button" name="button">
-            <img src="./images/minus.svg" alt="" />
-          </button>
-        </div>
-
-        <div class="total-price">$549</div>
-		<!--its cancel button(remove product)-->
-		<div class="buttons">
-          <span class="delete-btn"></span>
-        </div>
-      </div>
-      <!-- prodcut container end -->
-     </div>  
-    </div>
-
+    
 
    <!-- footer start -->
-   
+     
 	<!-- footer end -->
    </div>
-    <footer>
-		<div class="footer">
-		   <span> Time Inc. © 2017 </span>
-		</div>
+   <!--<footer>
+      <div class="footer-display">
+        <span> Time Inc. © 2017 </span>
+      </div>
 		
-	</footer>
+     </footer>-->
+    
+    
 </body>
 </html>
