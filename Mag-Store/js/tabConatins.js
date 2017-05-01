@@ -760,7 +760,7 @@ var jsonObj = {
 	   var subToatalButton = document.createElement('div');
 	   subToatalButton.id = "SubTotal-id";
 	   outHeaderDiv.appendChild(subToatalButton);
-	   document.getElementById("SubTotal-id").innerHTML = '<input type="button"  class="button-input" title="Proceed to checkout" value="Proceed to checkout">';
+	   document.getElementById("SubTotal-id").innerHTML = '<input type="button"  class="button-input" title="Proceed to checkout" onclick = "checkOut()" value="Proceed to checkout">';
        // close pop-up window
 	   var closePopUpDiv = document.createElement('div');
 	   closePopUpDiv.className = "cart-pop-up-button";
@@ -856,7 +856,7 @@ var jsonObj = {
 					var minusSpan = document.createElement('span');
 					minusSpan.id = "minusId_"+ itemId
 					quantityDiv.appendChild(minusSpan);
-					document.getElementById("minusId_"+ itemId).innerHTML = '<button class="plus-btn" id="minus-btn_0" type="button" onclick="quantityMinusBtn(\'' + itemId + '\')"><img src="./images/minus.svg" alt=""></button>';
+					document.getElementById("minusId_"+ itemId).innerHTML = '<button class="minus-btn" id="minus-btn_0" type="button" onclick="quantityMinusBtn(\'' + itemId + '\')"><img src="./images/minus.svg" alt=""></button>';
 					
 					// end quantity section
 					var totalPriceDiv = document.createElement('div');
@@ -878,7 +878,7 @@ var jsonObj = {
 					CheckOutPitemDiv.className = "cart-buttons";
 					CheckOutPitemDiv.id = "checkOutBtn_"+i;
 					cartItemListDiv.appendChild(CheckOutPitemDiv);
-					document.getElementById("checkOutBtn_"+i).innerHTML = '<input type="button" class ="check-out-btn" value="CheckOut" title="check out"/>';
+					document.getElementById("checkOutBtn_"+i).innerHTML = '<input type="button" class ="check-out-btn" onclick = "checkOut()" value="CheckOut" title="check out"/>';
 		
 				} // end loop
 				document.getElementById("sub-total-price-item").innerHTML = "$"+totalPrice;
@@ -889,6 +889,11 @@ var jsonObj = {
 			}
 	   });// END serviceCall function
 		
+  }
+  //Proceed for CheckOut item (Proceed to next page)
+  function checkOut(){
+	  console.log("current Location"+  window.location.href);
+	  window.location.href="checkout.html";
   }
 
   // close cart item pop-up window 
