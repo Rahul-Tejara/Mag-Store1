@@ -12,548 +12,7 @@
     }
 
 
-// created cart item json 
-var jsonObj_CartItem = {
-		  "prodcutDetails":[
-			//   {
-			// 	    "url": "./images/01.jpg",
-			// 		"title": "Fashion & Beauty",
-			// 		"price": "2000",
-			//       "quantity": 1,
-			//       "quantityPrice": "0"
-			//   },
-			//   {
-            //         "url": "./images/01.jpg",
-			// 		"title": "Fashion & Beauty",
-			// 		"price": "2000",
-			//     //   "quantityPrice": "0"
-			//   }
-			],
-		 "SubTotalPrice":[
-			 {
-				 "totalPrice": "0"
-			 }
-			 ]
-	  
-}
-// console.log("before"+JSON.stringify(jsonObj_CartItem),  jsonObj_CartItem.prodcutDetails.length);
-// console.log("final json testing "+ jsonObj_CartItem['prodcutDetails'].splice(0,1));
-// console.log("after"+JSON.stringify(jsonObj_CartItem),  jsonObj_CartItem.prodcutDetails.length);
 
-
-var jsonObj = {
-	"trending": {
-				"data": {
-				"images":[
-							{
-					"url": "./images/su.jpg",
-					"title": "Fashion & Beauty",
-					"price": "202"
-				  },
-				  
-				  {
-					"url": "./images/01.jpg",
-					"title": "Fashion & Beauty",
-					"price": "250"
-					},
-					{
-					"url": "./images/ew.jpg",
-					"title": "Fashion & Beauty",
-					"price": "223"
-					},
-					{
-					"url": "./images/su.jpg",
-					"title": "Fashion & Beauty",
-					"price": "233"
-				  },
-				  
-				  {
-					"url": "./images/01.jpg",
-					"title": "Fashion & Beauty",
-					"price": "100"
-					},
-					{
-					"url": "./images/ew.jpg",
-					"title": "Fashion & Beauty",
-					"price": "213"
-					},
-					{
-					"url": "./images/pe.jpg",
-					"title": "Fashion & Beauty",
-					"price": "403"
-					},
-					
-					{
-					"url": "./images/su.jpg",
-					"title": "Fashion & Beauty",
-					"price": "133"
-				},
-						{
-					"url": "./images/su.jpg",
-					"title": "Fashion & Beauty",
-					"price": "202"
-				  },
-				  
-				  {
-					"url": "./images/01.jpg",
-					"title": "Fashion & Beauty",
-					"price": "250"
-					},
-					{
-					"url": "./images/ew.jpg",
-					"title": "Fashion & Beauty",
-					"price": "223"
-					},
-					{
-					"url": "./images/su.jpg",
-					"title": "Fashion & Beauty",
-					"price": "233"
-				  },
-				  
-				  {
-					"url": "./images/01.jpg",
-					"title": "Fashion & Beauty",
-					"price": "100"
-					},
-					{
-					"url": "./images/ew.jpg",
-					"title": "Fashion & Beauty",
-					"price": "213"
-					},
-					{
-					"url": "./images/pe.jpg",
-					"title": "Fashion & Beauty",
-					"price": "403"
-					},
-					
-					{
-					"url": "./images/su.jpg",
-					"title": "Fashion & Beauty",
-					"price": "133"
-				},
-						{
-					"url": "./images/su.jpg",
-					"title": "Fashion & Beauty",
-					"price": "202"
-				  },
-				  
-				  {
-					"url": "./images/01.jpg",
-					"title": "Fashion & Beauty",
-					"price": "250"
-					},
-					{
-					"url": "./images/ew.jpg",
-					"title": "Fashion & Beauty",
-					"price": "223"
-					},
-					{
-					"url": "./images/su.jpg",
-					"title": "Fashion & Beauty",
-					"price": "233"
-				  },
-				  
-				  {
-					"url": "./images/01.jpg",
-					"title": "Fashion & Beauty",
-					"price": "100"
-					},
-					{
-					"url": "./images/ew.jpg",
-					"title": "Fashion & Beauty",
-					"price": "213"
-					},
-					{
-					"url": "./images/pe.jpg",
-					"title": "Fashion & Beauty",
-					"price": "403"
-					},
-					
-					{
-					"url": "./images/su.jpg",
-					"title": "Fashion & Beauty",
-					"price": "133"
-					}
-				,
-						{
-					"url": "./images/su.jpg",
-					"title": "Fashion & Beauty",
-					"price": "202"
-				  },
-				  
-				  {
-					"url": "./images/01.jpg",
-					"title": "Fashion & Beauty",
-					"price": "250"
-					},
-					{
-					"url": "./images/ew.jpg",
-					"title": "Fashion & Beauty",
-					"price": "223"
-					},
-					{
-					"url": "./images/su.jpg",
-					"title": "Fashion & Beauty",
-					"price": "233"
-				  },
-				  
-				  {
-					"url": "./images/01.jpg",
-					"title": "Fashion & Beauty",
-					"price": "100"
-					},
-					{
-					"url": "./images/ew.jpg",
-					"title": "Fashion & Beauty",
-					"price": "213"
-					},
-					{
-					"url": "./images/pe.jpg",
-					"title": "Fashion & Beauty",
-					"price": "403"
-					},
-					
-					{
-					"url": "./images/su.jpg",
-					"title": "Fashion & Beauty",
-					"price": "133"
-					}
-				,
-						{
-					"url": "./images/su.jpg",
-					"title": "Fashion & Beauty",
-					"price": "202"
-				  },
-				  
-				  {
-					"url": "./images/01.jpg",
-					"title": "Fashion & Beauty",
-					"price": "250"
-					},
-					{
-					"url": "./images/ew.jpg",
-					"title": "Fashion & Beauty",
-					"price": "223"
-					},
-					{
-					"url": "./images/su.jpg",
-					"title": "Fashion & Beauty",
-					"price": "233"
-				  },
-				  
-				  {
-					"url": "./images/01.jpg",
-					"title": "Fashion & Beauty",
-					"price": "100"
-					},
-					{
-					"url": "./images/ew.jpg",
-					"title": "Fashion & Beauty",
-					"price": "213"
-					},
-					{
-					"url": "./images/pe.jpg",
-					"title": "Fashion & Beauty",
-					"price": "403"
-					},
-					
-					{
-					"url": "./images/su.jpg",
-					"title": "Fashion & Beauty",
-					"price": "133"
-					},
-					{
-					"url": "./images/su.jpg",
-					"title": "Fashion & Beauty",
-					"price": "202"
-				  },
-				  
-				  {
-					"url": "./images/01.jpg",
-					"title": "Fashion & Beauty",
-					"price": "250"
-					},
-					{
-					"url": "./images/ew.jpg",
-					"title": "Fashion & Beauty",
-					"price": "223"
-					},
-					{
-					"url": "./images/su.jpg",
-					"title": "Fashion & Beauty",
-					"price": "233"
-				  },
-				  
-				  {
-					"url": "./images/01.jpg",
-					"title": "Fashion & Beauty",
-					"price": "100"
-					},
-					{
-					"url": "./images/ew.jpg",
-					"title": "Fashion & Beauty",
-					"price": "213"
-					},
-					{
-					"url": "./images/pe.jpg",
-					"title": "Fashion & Beauty",
-					"price": "403"
-					},
-					
-					{
-					"url": "./images/su.jpg",
-					"title": "Fashion & Beauty",
-					"price": "133"
-					}
-				
-				
-				]
-				}
-	},
-	"entertainment": {
-				"data": {
-				"images":[
-					{
-					"url": "./images/01.jpg",
-					"title": "Fashion & Beauty",
-					"price": "500"
-					},
-					{
-					"url": "./images/ew.jpg",
-					"title": "Fashion & Beauty",
-					"price": "23"
-					},
-					{
-					"url": "./images/pe.jpg",
-					"title": "Fashion & Beauty",
-					"price": "323"
-					},
-					
-					{
-					"url": "./images/su.jpg",
-					"title": "Fashion & Beauty",
-					"price": "103"
-				},
-						{
-					"url": "./images/su.jpg",
-					"title": "Fashion & Beauty",
-					"price": "202"
-				  },
-				  
-				  {
-					"url": "./images/01.jpg",
-					"title": "Fashion & Beauty",
-					"price": "250"
-					},
-					{
-					"url": "./images/ew.jpg",
-					"title": "Fashion & Beauty",
-					"price": "223"
-					},
-					{
-					"url": "./images/su.jpg",
-					"title": "Fashion & Beauty",
-					"price": "233"
-				  },
-				  {
-					"url": "./images/01.jpg",
-					"title": "Fashion & Beauty",
-					"price": "20"
-					},
-					{
-					"url": "./images/ew.jpg",
-					"title": "Fashion & Beauty",
-					"price": "213"
-					},
-					{
-					"url": "./images/pe.jpg",
-					"title": "Fashion & Beauty",
-					"price": "423"
-					},
-					
-					{
-					"url": "./images/su.jpg",
-					"title": "Fashion & Beauty",
-					"price": "202"
-				},
-						{
-					"url": "./images/su.jpg",
-					"title": "Fashion & Beauty",
-					"price": "202"
-				  },
-				  
-				  {
-					"url": "./images/01.jpg",
-					"title": "Fashion & Beauty",
-					"price": "250"
-					},
-					{
-					"url": "./images/ew.jpg",
-					"title": "Fashion & Beauty",
-					"price": "223"
-					},
-					{
-					"url": "./images/su.jpg",
-					"title": "Fashion & Beauty",
-					"price": "233"
-				  },{
-					"url": "./images/01.jpg",
-					"title": "Fashion & Beauty",
-					"price": "100"
-					},
-					{
-					"url": "./images/ew.jpg",
-					"title": "Fashion & Beauty",
-					"price": "2023"
-					},
-					{
-					"url": "./images/pe.jpg",
-					"title": "Fashion & Beauty",
-					"price": "323"
-					},
-					
-					{
-					"url": "./images/su.jpg",
-					"title": "Fashion & Beauty",
-					"price": "202"
-				},
-						{
-					"url": "./images/su.jpg",
-					"title": "Fashion & Beauty",
-					"price": "202"
-				  },
-				  
-				  {
-					"url": "./images/01.jpg",
-					"title": "Fashion & Beauty",
-					"price": "250"
-					},
-					{
-					"url": "./images/ew.jpg",
-					"title": "Fashion & Beauty",
-					"price": "223"
-					},
-					{
-					"url": "./images/su.jpg",
-					"title": "Fashion & Beauty",
-					"price": "233"
-				  }
-				
-				]
-				}
-			},
-			
-	"travel": {
-				"data": {
-				"images":[
-					
-					{
-					"url": "./images/01.jpg",
-					"title": "Fashion & Beauty",
-					"price": "100"
-					},
-					{
-					"url": "./images/ew.jpg",
-					"title": "Fashion & Beauty",
-					"price": "2023"
-					},
-					{
-					"url": "./images/pe.jpg",
-					"title": "Fashion & Beauty",
-					"price": "323"
-					},
-					
-					{
-					"url": "./images/su.jpg",
-					"title": "Fashion & Beauty",
-					"price": "202"
-				},
-						{
-					"url": "./images/su.jpg",
-					"title": "Fashion & Beauty",
-					"price": "202"
-				  },
-				  
-				  {
-					"url": "./images/01.jpg",
-					"title": "Fashion & Beauty",
-					"price": "250"
-					},
-					{
-					"url": "./images/ew.jpg",
-					"title": "Fashion & Beauty",
-					"price": "223"
-					},
-					{
-					"url": "./images/su.jpg",
-					"title": "Fashion & Beauty",
-					"price": "233"
-				  }
-				]
-				}
-			},
-			
-	"food": {
-				"data": {
-				"images":[
-					{
-					"url": "./images/su.jpg",
-					"title": "Fashion & Beauty",
-					"price": "233"
-				  },
-				  
-				  {
-					"url": "./images/01.jpg",
-					"title": "Fashion & Beauty",
-					"price": "100"
-					},
-					{
-					"url": "./images/ew.jpg",
-					"title": "Fashion & Beauty",
-					"price": "213"
-					},
-					{
-					"url": "./images/pe.jpg",
-					"title": "Fashion & Beauty",
-					"price": "423"
-					},
-					
-					{
-					"url": "./images/su.jpg",
-					"title": "Fashion & Beauty",
-					"price": "202"
-				},
-						{
-					"url": "./images/su.jpg",
-					"title": "Fashion & Beauty",
-					"price": "202"
-				  },
-				  
-				  {
-					"url": "./images/01.jpg",
-					"title": "Fashion & Beauty",
-					"price": "250"
-					},
-					{
-					"url": "./images/ew.jpg",
-					"title": "Fashion & Beauty",
-					"price": "223"
-					},
-					{
-					"url": "./images/su.jpg",
-					"title": "Fashion & Beauty",
-					"price": "233"
-				  },{
-					"url": "./images/01.jpg",
-					"title": "Fashion & Beauty",
-					"price": "100"
-					}
-				]
-				}
-			}
-						
-			
-}
 
 
 	$(function(){
@@ -573,6 +32,9 @@ var jsonObj = {
 		    $('.block section').hide();
 		    var activeTab = $(this).find('a').attr('href');
 		    console.log(activeTab);
+			// document.getElementById('search-item').style.display = 'none';
+			document.getElementById('search').value = '';
+			document.getElementById('search-item').innerHTML = '';
 		    // var idName = activeTab.split("#"); 
             hideMenuList();
 		    $(activeTab).show();
@@ -720,7 +182,9 @@ var jsonObj = {
 	  
    }
    function displayCartItem(){ 
+	//    document.getElementById("myDIV").style.opacity = "0.5";
 
+    //    document.getElementsByTagName("body")[0].style.opacity = "0.5";
 	   // refresh page .........pop-up and again create based on json data
 	    document.getElementById('cart-pop-up-display').innerHTML = '';
 	    // varibles for id and class name
@@ -760,7 +224,7 @@ var jsonObj = {
 	   var subToatalButton = document.createElement('div');
 	   subToatalButton.id = "SubTotal-id";
 	   outHeaderDiv.appendChild(subToatalButton);
-	   document.getElementById("SubTotal-id").innerHTML = '<input type="button"  class="button-input" title="Proceed to checkout" onclick = "checkOut()" value="Proceed to checkout">';
+	   document.getElementById("SubTotal-id").innerHTML = '<input type="button" id = "Proceed_id" class="button-input" title="Proceed to checkout" onclick = "checkOut()" value="Proceed to checkout">';
        // close pop-up window
 	   var closePopUpDiv = document.createElement('div');
 	   closePopUpDiv.className = "cart-pop-up-button";
@@ -787,7 +251,9 @@ var jsonObj = {
 				var itemListLength = response.itemList.length;
 				// if no item in cart then display no item Available
 				if(itemListLength == 0){
-					noItemPopUP(cartContainer_id);
+					noItemPopUP(cartContainer_id); 
+					document.getElementById('Proceed_id').disabled = true;
+				    document.getElementById('Proceed_id').style = 'cursor: not-allowed;';
 				}
 				var totalPrice = 0;
 				// <!-- Product -->
@@ -878,7 +344,7 @@ var jsonObj = {
 					CheckOutPitemDiv.className = "cart-buttons";
 					CheckOutPitemDiv.id = "checkOutBtn_"+i;
 					cartItemListDiv.appendChild(CheckOutPitemDiv);
-					document.getElementById("checkOutBtn_"+i).innerHTML = '<input type="button" class ="check-out-btn" onclick = "checkOut()" value="CheckOut" title="check out"/>';
+					document.getElementById("checkOutBtn_"+i).innerHTML = '<input type="button" id = "Proceed_id" class ="check-out-btn" onclick = "checkOut()" value="CheckOut" title="check out"/>';
 		
 				} // end loop
 				document.getElementById("sub-total-price-item").innerHTML = "$"+totalPrice;
@@ -899,6 +365,8 @@ var jsonObj = {
   // close cart item pop-up window 
     function closePopUp(){
 		   document.getElementById('cart-pop-up-display').style.display = 'none';
+		   document.getElementsByTagName("body")[0].style.opacity = "";
+
      }
     // no item pop- up func
 	function noItemPopUP(cartContainerDiv){
@@ -1010,6 +478,8 @@ var jsonObj = {
         //    display pop-up no item availables	// 
 			if(totalItem == 0){
 				noItemPopUP("cartContainer-id");
+				document.getElementById('Proceed_id').disabled = true;
+			    document.getElementById('Proceed_id').style = 'cursor: not-allowed;';
 			}
 			// enable add to cart button.....
 			document.getElementById(itemKey).disabled = false;
@@ -1053,4 +523,76 @@ var jsonObj = {
 		}
 		}
 	}
-	}
+}
+
+  function serachItem(){
+	  var tabIdName = 'search-item';
+	  document.getElementById('trending').style.display = 'none';
+	  document.getElementById('entertainment').style.display = 'none';
+	  document.getElementById('travel').style.display = 'none';
+	  document.getElementById('food').style.display = 'none';
+	  document.getElementById(tabIdName).style.display = ' ';
+	  document.getElementById(tabIdName).innerHTML = '';
+	  var productName = document.getElementById("search").value;
+	  console.log("serach prdict name "+ productName);
+	  var params = {prduct_Name: productName};
+		      serviceCall('GET', serach_apiUrl, params, function(response) {
+			  if(response.status == 200){
+				var sizeOfJson = response.tab_data.length;
+				console.log("sizeOfJson"+sizeOfJson);
+				var prodcutData = response.tab_data;
+				
+			    for(var i = 0; i < sizeOfJson ; i++){ 
+					var imageUrl = prodcutData[i].productUrl;
+					var productTitle = prodcutData[i].productTitle;
+					var prodcutPrice = prodcutData[i].productPrice; 
+					var addCartId = prodcutData[i].id;
+					var id = i.toString();	
+					console.log("title is ----"+productTitle);
+					//  first create outerDiv and appendChild to tabIdName (it will add based on tab id )
+					var outerDiv = document.createElement('div');
+					outerDiv.id = tabIdName+'_item_'+id;
+					outerDiv.className = 'item';
+					outerDiv.style.backgroundImage = "url('"+ imageUrl +"')";
+					document.getElementById(tabIdName).appendChild(outerDiv);
+					//  now will create another innerDiv add to parent div (outerDiv)
+					var innerDiv = document.createElement('div');
+					innerDiv.className = 'image-details';
+					outerDiv.appendChild(innerDiv);
+
+				// inside of innerDiv - : create anothe two div (one for title & price anothe for add Cart button)
+					var innerDivFirst = document.createElement('div');
+					innerDivFirst.className = 'image-title-price';
+					innerDiv.appendChild(innerDivFirst); 
+
+					// create span for  display title of product and add with innerDivFirst
+					var innerSpanFirst = document.createElement('span');
+					innerSpanFirst.className = ''; // will put class name later if required
+					innerDivFirst.appendChild(innerSpanFirst);
+					innerSpanFirst.innerHTML = "<b>Title &nbsp; &nbsp; &nbsp;"+ productTitle +"<b><br>"; // here will put prodcutImage details from json object 
+
+					// create span for display price of product and add with innerDivFirst
+					var innerSpanSecond = document.createElement('span');
+					innerSpanSecond.className = ''; // will put class name later if required
+					innerDivFirst.appendChild(innerSpanSecond);
+					innerSpanSecond.innerHTML = "<b>Price &nbsp; &nbsp; $ &nbsp;" + prodcutPrice	 + "</b>" // here will put product price details from json object 
+
+					//  cretae second div for add Cart button and add with innerDiv
+					var innerDivSecond = document.createElement('div');
+					innerDivSecond.className = ''; // will put class name after
+					innerDivSecond.id = tabIdName+'_ButtonDiv_'+id;
+					innerDiv.appendChild(innerDivSecond);   
+					// add cart button id
+					var buttonId = addCartId; // Uniqe id for all prduct
+					// pass button id as a paramter
+					document.getElementById(tabIdName+'_ButtonDiv_'+id).innerHTML = '<input type="button" id = '+ buttonId +' class="image-footer-button" title = "Add To CART" value="ADD TO CART" onclick="addToCart(\'' + buttonId + '\')" />'; 
+				
+		      } // end for loop
+			  }else if(response.status == 500){
+                  console.log("error message"+ response.msg);
+			  }else{
+                  console.log("server down..... please check internet connection");
+			  }
+		}); // end sevice call fucntion for fetching data of product .....
+	   
+  }

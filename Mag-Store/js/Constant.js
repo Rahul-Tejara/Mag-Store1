@@ -12,5 +12,8 @@ var displayTotalNumberItem_apiUrl = 'http://localhost:3000/index/displaytotalite
 // 4. this APi URL for Display ADD TO CART item on pop-up window ( GET METHOD - )
 var displayPopUpItem_apiUrl = 'http://localhost:3000/index/displayitemcart';
 
-// 4. this APi URL for increment quantity and decrement quantity ( POST METHOD - )
+// 5. this APi URL for increment quantity and decrement quantity ( POST METHOD - )
 var qauntity_apiUrl = 'http://localhost:3000/index/quantity';
+
+// 6. search ....
+var serach_apiUrl = 'http://localhost:3000/index/search';

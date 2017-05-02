@@ -1,14 +1,14 @@
 <!--<!DOCTYPE html>-->
 <html>
 <head>
-        <meta charset="UTF-8">
-		 <meta name="description" content="MAG STORE">
+         <meta charset="UTF-8">
+		     <meta name="description" content="MAG STORE">
          <meta name="keywords" content="HTML,CSS,XML,JavaScript">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
     	  <title>MAG STORE</title>
-		  <link rel="icon" href="./images/MITO-Studios-Icon-Teal.jpg" sizes="32x32">
+		    <link rel="icon" href="./images/MITO-Studios-Icon-Teal.jpg" sizes="32x32">
     	  <!-- its for css files  -->
     	  <link rel="stylesheet" type="text/css" href="./css/comman.css">
     	  <!--  its for  jquery -->
@@ -43,8 +43,8 @@
             <img src="./images/timeinc_logo.svg"  alt="Time inc" width="100" height="60">
           </div>
           <div class="search-box">
-            <input type="text" name="search" placeholder="Search.."> 
-            <i class="fa fa-search" title="Search Product" aria-hidden="true"></i> 
+            <input type="text" name="search" id="search" placeholder="Search.."> 
+            <i class="fa fa-search" title="Search Product" onclick="serachItem()" aria-hidden="true"></i> 
           </div>
           <div class="item-cart">
               <span class="cart-text">MY CART</span>
@@ -87,10 +87,11 @@
 
        <!-- its for first tab  -->
        <section class = "block">
-		    <section class="images-container" id="trending" > 
+				 
+		     <section class="images-container" id="trending" > 
 		        <!-- its for second tab1 -->
-           
-	        </section>
+	       </section>
+					
 	            <!-- its for second tab2 -->
 	        <section class="images-container" id="entertainment" > 
 		        <!-- image prodcut contain  -->
@@ -103,8 +104,20 @@
 	        <section class="images-container" id="food" > 
 		      
 	        </section>
+					<!--search-->
+					 <!--<section class="images-container" id="search-item" > 
+		     
+	          </section>-->
 					
        </section>
+
+			 <div class="">
+				 <section class="images-container" id="search-item" > 
+		    
+	        </section>
+			 </div>
+			 
+			 
 	   
 	     <div class="shopping-cart" id = "cart-pop-up-display">
 

@@ -25,7 +25,7 @@
 <body>
 
     <!-- header start -->
-    <div>
+    <div class="main-id">
     <header>
        <div class="header">
          <!-- its for device-->
@@ -89,43 +89,7 @@
    <!-- cart item -->
  <div class="checkout-main-container">
    <div class="check-cart-container" id="cartContainer-id">
-       <div class="check-cart-item-list" id="cart-list-32">
-            <div class="check-image"><img src="./images/Golf/Golf-02.jpg" alt=""></div>
-            <div class="check-cart-description">
-                <span id="productName_0">Golf</span>
-                <span id="productColor_0">brown</span>
-            </div>
-            <div class="check-cart-quantity" id="quantity_0">
-                <span>Quantity </span>
-                <input type="text" value = 2 id="itemCounter32">
-            </div>
-            <div class="check-cart-total-price" id="total-price-item-32">$30</div>
-        </div>
-        <div class="check-cart-item-list" id="cart-list-32">
-            <div class="check-image"><img src="./images/Golf/Golf-02.jpg" alt=""></div>
-            <div class="check-cart-description">
-                <span id="productName_0">Golf</span>
-                <span id="productColor_0">brown</span>
-            </div>
-            <div class="check-cart-quantity" id="quantity_0">
-                <span>Quantity </span>
-                <input type="text" value = 2 id="itemCounter32">
-            </div>
-            <div class="check-cart-total-price" id="total-price-item-32">$30</div>
-        </div>
-        <div class="check-cart-item-list" id="cart-list-32">
-            <div class="check-image"><img src="./images/Golf/Golf-02.jpg" alt=""></div>
-            <div class="check-cart-description">
-                <span id="productName_0">Golf</span>
-                <span id="productColor_0">brown</span>
-            </div>
-            <div class="check-cart-quantity" id="quantity_0">
-                <span>Quantity </span>
-                <input type="text" value = 2 id="itemCounter32">
-            </div>
-            <div class="check-cart-total-price" id="total-price-item-32">$30</div>
-        </div>
-    </div>
+   </div>
     <!-- make one -pop-up for final payment -->
     <div class="amount-payable"> 
          <div class="amount-description">
@@ -134,16 +98,16 @@
              </div>
              <!--<span class="price-detatils">PRICE DETAILS </span>-->
              <div class="item-price">
-                <div> Price (2 items)</div>
-                <div class="price"> $123 </div>
+                <div id ="final-item"> </div>
+                <div class="price" id="final-price"></div>
              </div> 
              <div class="delivery-price">
-                <div> Price (2 items)</div>
-                <div class="price"> $123 </div>
+                <div> DeliveryCharge</div>
+                <div class="price" id="delivery-charge">$2 </div>
              </div>
              <div class="total-amount-payable">
                 <div> Sub-Total Pay</div>
-                <div class="price"> $1456 </div>
+                <div class="price" id="suTotal"></div>
              </div>
              <div>
                  <input type="button"  class="btn-place-order" title="Pay amount" onclick = "checkOut()" value="PLCAE ORDER">
