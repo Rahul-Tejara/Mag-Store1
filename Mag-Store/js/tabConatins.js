@@ -31,11 +31,8 @@
 		    $(this).addClass('active')
 		    $('.block section').hide();
 		    var activeTab = $(this).find('a').attr('href');
-		    console.log(activeTab);
-			// document.getElementById('search-item').style.display = 'none';
 			document.getElementById('search').value = '';
 			document.getElementById('search-item').innerHTML = '';
-		    // var idName = activeTab.split("#"); 
             hideMenuList();
 		    $(activeTab).show();
 		    return false;
@@ -51,10 +48,8 @@
 		      serviceCall('GET', tabContains_apiUrl, params, function(response) {
 			  if(response.status == 200){
 				var sizeOfJson = response.tab_data.length;
-				console.log("sizeOfJson"+sizeOfJson);
 				var prodcutData = response.tab_data;
 				if(pageProduct > 0){
-					console.log(moreButton_id + "removeButtonDiv");
 						document.getElementById(moreButton_id).remove();
 
 				}
@@ -103,20 +98,24 @@
 					document.getElementById(tabIdName+'_ButtonDiv_'+id).innerHTML = '<input type="button" id = '+ buttonId +' class="image-footer-button" title = "Add To CART" value="ADD TO CART" onclick="addToCart(\'' + buttonId + '\')" />'; 
 				
 				//    logic for create dynamic load more product button condition based-:  it will display every 8 product
-				if((i+1) % 8 == 0 ) {
+				if((i+1) % 8 == 0 && (i+1) < sizeOfJson) {
 					// creating div only for  more display product  button div or span (no more data availables); 
 					var moreProductDiv = document.createElement('div');
 					moreProductDiv.className = 'moreItem'; // if required will add later
 					moreProductDiv.id = tabIdName+'_moreLoad_'+id;  
 					document.getElementById(tabIdName).appendChild(moreProductDiv);
-					if((i+1) < sizeOfJson){
-						console.log("load more prodcut button created and i vlaues is"+ i+1);
+			
 						var moreButtonId = tabIdName+'_moreLoad_'+id;
 						var nextPage = i+1;
 						// pass counter as a parameter for next 8 product
-						document.getElementById(moreButtonId).innerHTML = '<input type="button" id = "load-moreProduct"  class="more-product-button" title = "load more Product" value="Load More" onclick="displayProduct(\'' + tabIdName + '\', '+nextPage+', \'' + moreButtonId + '\')" />';
+						document.getElementById(moreButtonId).innerHTML = '<input type="button" id = "load-moreProduct"  class="more-product-button" title = "load more Product" value="LOAD MORE" onclick="displayProduct(\'' + tabIdName + '\', '+nextPage+', \'' + moreButtonId + '\')" />';
 					}
 					else if((i+1) == sizeOfJson){
+						// creating div only for  more display product  button div or span (no more data availables); 
+						var moreProductDiv = document.createElement('div');
+						moreProductDiv.className = 'moreItem'; // if required will add later
+						moreProductDiv.id = tabIdName+'_moreLoad_'+id;  
+						document.getElementById(tabIdName).appendChild(moreProductDiv);
 						console.log("no more product call");
 						// display message no more prodcut availables
 						var span = document.createElement('span');
@@ -128,7 +127,7 @@
 				
 					} // end if
 			
-				} // end if main
+				
 		      } // end for loop
 			  }else if(response.status == 500){
                   console.log("error message"+ response.msg);
@@ -143,13 +142,11 @@
 	   // 
 			var param = {};
 			serviceCall('GET', displayTotalNumberItem_apiUrl, param, function(response) {
-				console.log("itms --"+ response.itemId.length);
 				if(response.status == 200){
 				var totalItem = response.itemId.length;
 				if(totalItem > 0){
 					document.getElementById("total-item-cart").innerHTML= totalItem ;
 					for(var i = 0; i < totalItem; i++){
-						console.log(response.itemId[i].itemId);
 						var itemId = response.itemId[i].itemId;
 						document.getElementById(itemId).disabled = true;
 						document.getElementById(itemId).style = 'cursor: not-allowed;';
@@ -158,7 +155,7 @@
 				}else if(response.status == 500){
 						console.log("error message"+ response.msg);
 				}else{
-						console.log("server down..... please check internet connection");
+						console.log("server down..... please check server connection");
 				}
 
 			});
@@ -173,10 +170,16 @@
 				document.getElementById(buttonId).disabled = true;
 				document.getElementById(buttonId).style = 'cursor: not-allowed;';
 				document.getElementById("total-item-cart").innerHTML= response.cart_totalItem ;
+				// var nodes = document.getElementById("trending_item_2").getElementsByTagName('*');
+				// for(var i = 0; i < nodes.length; i++){
+				// 	nodes[i].disabled = true;
+				// 	nodes[i].style.opacity = "0.5";
+				// 	// console.log("vffdvfdv");
+				// }
 			}else if(response.status == 500){
                   console.log("error message"+ response.msg);
 			}else{
-                  console.log("server down..... please check internet connection");
+                  console.log("server down..... please check Server connection");
 			}
 	   });
 	  
@@ -246,7 +249,6 @@
 		// servcice call for getting item list from DB 
 		var params = { };
 	    serviceCall('GET', displayPopUpItem_apiUrl, params, function(response) {
-            console.log("totalItem is --- "+ response.itemList);
 			if(response.status == 200){
 				var itemListLength = response.itemList.length;
 				// if no item in cart then display no item Available
@@ -358,19 +360,17 @@
   }
   //Proceed for CheckOut item (Proceed to next page)
   function checkOut(){
-	  console.log("current Location"+  window.location.href);
 	  window.location.href="checkout.html";
   }
 
   // close cart item pop-up window 
-    function closePopUp(){
-		   document.getElementById('cart-pop-up-display').style.display = 'none';
-		   document.getElementsByTagName("body")[0].style.opacity = "";
+  function closePopUp(){
+		document.getElementById('cart-pop-up-display').style.display = 'none';
+		document.getElementsByTagName("body")[0].style.opacity = "";
 
-     }
+   }
     // no item pop- up func
 	function noItemPopUP(cartContainerDiv){
-		console.log(" no item availables in cart");
 		var cartNoItemDiv = document.createElement('div');
 		cartNoItemDiv.className = "cart-no-item";
 		document.getElementById(cartContainerDiv).appendChild(cartNoItemDiv);
@@ -414,7 +414,7 @@
 			}else if(response.status == 500){
                   console.log("error message"+ response.msg);
 			}else{
-                  console.log("server down..... please check internet connection");
+                  console.log("server down..... please check server connection");
 			}
 	        });
 	  }else{
@@ -485,6 +485,7 @@
 			document.getElementById(itemKey).disabled = false;
 			document.getElementById(itemKey).style = 'cursor: pointer;';
 			document.getElementById("total-item-cart").innerHTML= totalItem ;
+			
 		}else if(response.status == 500){
 			  console.log("error message"+ response.msg);
 		}else{
@@ -497,7 +498,6 @@
 		document.getElementById("myDropdown").classList.toggle("show");
 	}
     function hideMenuList(){
-	    console.log("eeee");
 	   	// document.getElementById("myDropdown").style.display = 'none';
 		var dropdowns = document.getElementsByClassName("dropdown-content");
 		var i;
@@ -534,7 +534,6 @@
 	  document.getElementById(tabIdName).style.display = ' ';
 	  document.getElementById(tabIdName).innerHTML = '';
 	  var productName = document.getElementById("search").value;
-	  console.log("serach prdict name "+ productName);
 	  var params = {prduct_Name: productName};
 		      serviceCall('GET', serach_apiUrl, params, function(response) {
 			  if(response.status == 200){
@@ -548,7 +547,6 @@
 					var prodcutPrice = prodcutData[i].productPrice; 
 					var addCartId = prodcutData[i].id;
 					var id = i.toString();	
-					console.log("title is ----"+productTitle);
 					//  first create outerDiv and appendChild to tabIdName (it will add based on tab id )
 					var outerDiv = document.createElement('div');
 					outerDiv.id = tabIdName+'_item_'+id;
@@ -591,7 +589,7 @@
 			  }else if(response.status == 500){
                   console.log("error message"+ response.msg);
 			  }else{
-                  console.log("server down..... please check internet connection");
+                  console.log("server down..... please check server connection");
 			  }
 		}); // end sevice call fucntion for fetching data of product .....
 	   

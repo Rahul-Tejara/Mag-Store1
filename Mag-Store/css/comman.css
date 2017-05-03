@@ -1,7 +1,4 @@
-.main-id{
-	  /*background-color: rgb(0,0,0);  Fallback color */
-	 /*background-color: rgba(0,0,0,0.4);  Black w/ opacity  */
-}
+
  /* first header css :start*/
 .header{
     display: flex;
@@ -46,15 +43,16 @@
 
 	/* second heade css :start*/
 	.second-header{
-		left: 0;
-		top: 60px;
-        position: absolute;
-        width: 100%;
+		/*left: 0;
+		top: 60px;*/
+        /*position: absolute;*/
+        /*width: 100%;*/
 		display: block;
-		background-image:url("./43834601-Online-Shopping-E-commerce-Flat-Design-Concept-Banner-Background-Stock-Photo.jpg"); 
+		background-image:url("./cost-of-ecommerce-business.jpg"); 
 		background-repeat: no-repeat;
 	    background-size: cover;
-		height: 273px;
+		height: 370px;
+		margin-top: 60px;
 		
 		
 	}
@@ -82,11 +80,11 @@
 
 	.heading h1 {
 	  text-align: center;
-	  padding: 61px 0px 0px 0px;
+	  /*padding: 61px 0px 0px 0px;*/
 	  font-size: 58px;
 		/* font-variant-caps: inherit; */
 	  font-style: oblique;
-	  color: brown;
+	  color: black;
 	}
 
    /* .sub-header css :start*/
@@ -106,10 +104,7 @@
 		width: 100%;
 		/*padding-left: 39%;*/
    }
-/*	
-	.sub-header {
-	 
-	}*/
+
 	 .sub-header ul.tabs li a{
 		color:white;
 		text-transform: uppercase;
@@ -118,11 +113,13 @@
 		
 	}
 	.sub-header .tabs {
-		top: 317px;
+		/*top: 317px;*/
 		z-index: 1;
-		position: absolute;
+		/*position: absolute;*/
         background-color:#232F3E;
 		padding: 10px 0px 10px 0px;
+		margin-bottom: auto;
+		margin-top: auto;
 
 	}
 	.sub-header ul.tabs li a:active {
@@ -136,9 +133,9 @@
 		left: 0;
 		width: 100%;
 		/*height: 59%;*/
-		position: absolute;
+		/*position: absolute;*/
 		/*overflow: auto;*/
-		margin-top: 16%;
+		/*margin-top: 16%;*/
 		margin-bottom: 3%;
 		
 	}
@@ -148,11 +145,10 @@
 	}
 
 	.item {
-	  top: 100px;
-	  display: block;
-	  padding: 4%;
-	  /*margin: 2%;*/
-	  margin: 95px 25px 20px 25px;
+	  /*top: 100px;*/
+	  /*display: block;*/
+	  padding: 4%;  
+      margin: 30px 26px 108px 25px;
 	  position: relative;
 	  width: 11%;
 	  height: 230px;
@@ -161,18 +157,18 @@
 	  left: 59px;
     }
 	/* not used */
-	.imgae-title{
+	/*.imgae-title{
 		display: block;
 	    position: absolute;
 	    bottom: 0;
 	    height: 30px;
-	    background: black;
+	    background: black;*/
 	    /*color: white;*/
-	    width: 100%;
+	    /*width: 100%;
 	    left: 0px;
 		color: red;
 		margin: 9px 23px -32px 0px;
-	}
+	}*/
 
     .image-details {
         display: block;
@@ -192,9 +188,12 @@
 	.image-footer-button {
       /*padding: 87px;*/
 	  width: 100%;
-	  padding: 1px 80px 4px 81px;
+	  padding: 4px 88px 5px 58px;
 	  cursor: pointer;
 	  font-weight:bold;
+	  background-color: cadetblue;
+	  font-size: 15px;
+      letter-spacing: 2px;
 	  
     }
 	.image-footer-button:hover
@@ -204,23 +203,32 @@
 	}
 	/*load more buuton*/
 	.no-more-product{
-		top: 145%;
-		position: relative;
-		margin: 0% 0% 0% -1003%;
 		font-weight: bold;
-		padding-bottom: 41%;
+		color: antiquewhite;
+		font-size: 18px;
+		letter-spacing: 3px;
+		padding: 13px 34px 14px 36px;
+    	background-color: darkslategrey;
+		margin-left: 536px;
+	
 	}
 	.more-product-button{
-		width: 100%;
-		position: relative;
-		/* padding: 0px 84px 7px 80px; */
 		cursor: pointer;
-		margin: 820% 0% 0% -720%;
 		font-weight: bold;
+		margin-left: 566px;
+		padding: 13px 34px 14px 36px;
+    	background-color: darkslategrey;
+    	color: antiquewhite;
+		font-size: 18px;
+		letter-spacing: 3px;
+
 	}
 	
 	.moreItem{
-		/*margin: 0px 0px 0px 0px;*/
+		width: 100%;
+		top: 27px;
+        position: relative;
+		/*background-color: blue;*/
 	}
 	/* css for pop-up of card items*/
 	 #cart-pop-up-display{
@@ -229,32 +237,29 @@
 	.shopping-cart {
 		width: 750px;
 		height: 500px;
-		/*margin: 80px auto;*/
 		background: #43484D;
 		box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
 		border-radius: 6px;
-		/*z-index: 9999;*/
-		/*display: flex;*/
-	
+		top: 85px;
+        margin-left: 298px;
 		background-color:aliceblue;
 		position: fixed;
 		z-index: 1;
-		margin: 7% 2% 3% 22%;
 		overflow : auto;
 	}
 
 	.shopping-cart-header {
-		height: 30px;
+		/*height: 30px;*/
 		border-bottom: 1px solid #E1E8EE;
 		padding: 20px 30px;
 		color: black;
 		font-size: 27px;
 		font-weight: 400;
 		display: inline-flex;
-		position: fixed;
+		/*position: fixed;*/
 		z-index: 1;
 		background-color: lightseagreen;
-		width: 51%;
+		width: 92%;
 	}
 	.sub-total-price{
 		width: 83px;
@@ -265,9 +270,9 @@
 		font-weight: 300;
 	}
 	.cart-container{
-		position: absolute;
+		/*position: absolute;*/
 		/* overflow: auto; */
-		margin-top: 10%;
+		/*margin-top: 10%;*/
 	}
 	.checkout-details{
 		display: inline-flex;
@@ -417,21 +422,13 @@
 	}
 	
 /*    footer css*/
-    .footer-display{
-		display: block;
-		/*margin-top: 131%;*/
-		text-align: center;
-		background-color: #3B5998;
-		color: #eee;
-		/*padding: 115px 0px 8px 0px;
-		/* bottom: 0; */
-		/*position: absolute;*/
-		width: 100%;
-		/*left: 0;*/
-		/* top: 154%; */
-	}
-
-
+    
+	.footer-display {
+		
+		height: 132px;
+		background-color: #232F3E;
+    }
+	
 	.menu-for-device {
 		display: none;
 		color: white;
@@ -439,8 +436,6 @@
 		/*position: relative;
         display: inline-block;*/
 	}
-	
-
 	#menu-list {
 		display: none;
 		position: absolute;
@@ -448,37 +443,17 @@
 		height: 291%;
 		top: 61px;
 		background-color: black;
-    /* padding-top: 8%; */
-    /* top: 91%; */
-    /* margin-top: 3%; */
-    /*z-index: 2;*/
 	}
-
-	/*.modal-pop-up {
-	  display: block;
-	  position: fixed;
-	  width: 100%;
-	  height: 100%;
-	  z-index: 2;
-	  background-color: gray;
-	}
-	*/
 
 /* its for ipad 100%*/
 @media (min-width: 768px)  and (max-width: 1024px) {
   
    .dropbtn {
-		/*background-color: #4CAF50;*/
 		color: white;
-		/*padding: 16px;*/
 		font-size: 16px;
 		border: none;
 		cursor: pointer;
     }
-
-	.dropbtn:hover, .dropbtn:focus {
-		/*background-color: #3e8e41;*/
-	}
 
 	.dropdown {
 		position: relative;
