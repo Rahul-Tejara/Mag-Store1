@@ -17,3 +17,6 @@ var qauntity_apiUrl = 'http://localhost:3000/index/quantity';
 
 // 6. search ....
 var serach_apiUrl = 'http://localhost:3000/index/search';
+
+// 7. post method for email emailsubscribe.....
+var email_subscribe_apiUrl = 'http://localhost:3000/index/emailsubscribe';

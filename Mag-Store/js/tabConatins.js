@@ -11,10 +11,6 @@
       });
     }
 
-
-
-
-
 	$(function(){
 		//  set varible for display prodcut first time(example - : 8);  
 		  pageProduct = 0;
@@ -587,6 +583,25 @@
 				
 		      } // end for loop
 			  }else if(response.status == 500){
+                  console.log("error message"+ response.msg);
+			  }else{
+                  console.log("server down..... please check server connection");
+			  }
+		}); // end sevice call fucntion for fetching data of product .....
+	   
+  }
+  // this is emailSubscribe function
+  
+  function emailSubscribe(){
+    /**
+	 * send email to customer (SMTP).,.........and update customer data in over database.....
+	 */
+	    var emailAddress = document.getElementsByClassName('email-box')[0].value;
+		console.log("emial -called"+ emailAddress);
+		var params = {email_addess: emailAddress};
+		serviceCall('POST', email_subscribe_apiUrl, params, function(response) {
+			  if(response.status == 200){
+				  }else if(response.status == 500){
                   console.log("error message"+ response.msg);
 			  }else{
                   console.log("server down..... please check server connection");
