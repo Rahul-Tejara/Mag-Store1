@@ -1,17 +1,14 @@
 
    .checkout-main-container{
-     /*margin-top: 32%;*/
-     /*position: absolute;*/
+     margin-top: 2%;
    }
    .check-cart-container{
 		position: absolute;
-		/* overflow: auto; */
-		/*margin-top: 33%;*/
         background-color: darkseagreen;
         margin-left: 78px;
 	}
     .check-cart-item-list {
-        padding: 8px 81px;    		/*height: 120px;*/
+        padding: 8px 81px; 
 		display: flex;
 	}
     
@@ -25,7 +22,6 @@
 	}
 
     .check-image{ 
-        /*92*/
 		margin-right: 70px;
 	}
 
@@ -69,9 +65,6 @@
 		color: #43484D;
 		font-weight: 300;
 	}
-
-
-    
 	/* Total Price */
 	.check-cart-total-price {
 		width: 83px;
@@ -85,27 +78,16 @@
     /*pop-up css for final-payable */
     .amount-payable{
         position: absolute;
-		/* overflow: auto; */
-		/*margin-top: 33%;*/
         background-color: beige;
         margin-left: 71%;
     }
     .amount-description{
-        /*padding: 20px 81px;*/
         padding: 18px 58px 20px 33px;
-		/*height: 120px;*/
-		/*display: flex;*/
+		
     }
     .amount-description .price-detatils{
-       /*border-bottom:  1px solid #E1E8EE;*/
        color: black;
-       
        text-transform: uppercase;
-        /*padding: 13px 24px;*/
-        /*border-bottom: 1px solid #f0f0f0;*/
-        /*color: #878787;*/
-        /*min-height: 47px;*/
-        /*border-radius: 2px 2px 0 0;*/
     }
     .amount-description .item-price{
         display: flex;

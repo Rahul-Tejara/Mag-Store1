@@ -1,24 +1,17 @@
-// service  call for all GET AND POST METHOD 
-	   function serviceCall(method, URL, params, callback) {
-        return $.ajax({
-        url: URL,
-        type: method,
-        cache: false,
-        data: params,
-        }).done(callback).fail(function(jqXHR, textStatus, errorThrown) {
-        // Handle error
-		     console.log("Server Down Please check internet conection ");
-      });
-    }
 
+// this is ...first default call function for tabs contain and all
 	$(function(){
-		//  set varible for display prodcut first time(example - : 8);  
-		  pageProduct = 0;
+		  //  set pageProduct varible for display 8 product in first time(example - : 8);  
+		  var pageProduct = 0;
+		  //   call to fucntion for display product for everytabs
 		  displayProduct("trending", pageProduct);
 		  displayProduct("entertainment", pageProduct);
 		  displayProduct("travel", pageProduct);
 		  displayProduct("food", pageProduct);
+
+          // default function call when we refresh page .....to display cart counter in cart and disabled selected button 
 		  totalItemCartValue();
+          //    this is logic for change tabs 
 		  $('.tabs li:first').addClass('active');
 		  $('.block section').hide();
 		  $('.block section:first').show();
@@ -38,18 +31,48 @@
 	
 
     function displayProduct(tabIdName, pageProduct, moreButton_id) {
+		/**
+		 * used this function for fetch data from db and call to createDiv function for creating dynamic div and append with tab name 
+		 */
 	   	// body...
-		      
+		      var flag = true;
 		      var params = {tabName: tabIdName};
 		      serviceCall('GET', tabContains_apiUrl, params, function(response) {
 			  if(response.status == 200){
 				var sizeOfJson = response.tab_data.length;
 				var prodcutData = response.tab_data;
+				// after clicking load more  button...... remove more previous  button .....
 				if(pageProduct > 0){
 						document.getElementById(moreButton_id).remove();
 
 				}
-			    for(var i = pageProduct; i < sizeOfJson && i < (pageProduct)+8; i++){ 
+				// call fucntion  for createDiv and append with tabName
+               createDiv(tabIdName, pageProduct, sizeOfJson, prodcutData, flag);
+			  }else if(response.status == 500){
+                  console.log("error message"+ response.msg);
+			  }else{
+                  console.log("server down..... please check internet connection");
+			  }
+		  }); // end sevice call fucntion for fetching data of product .....
+	   
+   }
+
+   function createDiv(tabIdName, pageProduct, sizeOfJson, prodcutData, flag){
+	    /**
+		 *  this function used for display create dynamic div product contain by tabIdName and  i am using this fucntion for searching item by categaory
+		 */
+	            var endIndex;
+				var startIndex;
+				// if flag is true then it will consider for display only product item if flag is false then its for serachItem
+				if(flag == true){
+                   endIndex = (pageProduct)+8;
+				   startIndex = pageProduct;
+				}else{
+					// this is for searching flag 
+                   endIndex = sizeOfJson;
+				   startIndex = 0;
+				}
+			    for(var i = startIndex; i < sizeOfJson && i < endIndex; i++){ 
 					var imageUrl = prodcutData[i].productUrl;
 					var productTitle = prodcutData[i].productTitle;
 					var prodcutPrice = prodcutData[i].productPrice; 
@@ -92,51 +115,46 @@
 					var buttonId = addCartId; // Uniqe id for all prduct
 					// pass button id as a paramter
 					document.getElementById(tabIdName+'_ButtonDiv_'+id).innerHTML = '<input type="button" id = '+ buttonId +' class="image-footer-button" title = "Add To CART" value="ADD TO CART" onclick="addToCart(\'' + buttonId + '\')" />'; 
+					// only we wll create load more item  button  in tab contaion (no for searching)
+					if(flag == true){
+					//    logic for create dynamic load more product button condition based-:  it will display every 8 product
+						if((i+1) % 8 == 0 && (i+1) < sizeOfJson) {
+							// creating div only for  more display product  button div or span (no more data availables); 
+							var moreProductDiv = document.createElement('div');
+							moreProductDiv.className = 'moreItem'; // if required will add later
+							moreProductDiv.id = tabIdName+'_moreLoad_'+id;  
+							document.getElementById(tabIdName).appendChild(moreProductDiv);
+					
+								var moreButtonId = tabIdName+'_moreLoad_'+id;
+								var nextPage = i+1;
+								// pass counter as a parameter for next 8 product
+								document.getElementById(moreButtonId).innerHTML = '<input type="button" id = "load-moreProduct"  class="more-product-button" title = "load more Product" value="LOAD MORE" onclick="displayProduct(\'' + tabIdName + '\', '+nextPage+', \'' + moreButtonId + '\')" />';
+							}
+							else if((i+1) == sizeOfJson){
+								// creating div only for  more display product  button div or span (no more data availables); 
+								var moreProductDiv = document.createElement('div');
+								moreProductDiv.className = 'moreItem'; // if required will add later
+								moreProductDiv.id = tabIdName+'_moreLoad_'+id;  
+								document.getElementById(tabIdName).appendChild(moreProductDiv);
+								console.log("no more product call");
+								// display message no more prodcut availables
+								var span = document.createElement('span');
+								span.className = "no-more-product";
+								span.style = "font-weight: bold;"
+								span.id = "no-moreProduct";
+								moreProductDiv.appendChild(span);
+								document.getElementById("no-moreProduct").innerHTML = "No More Prodcut Available";
+						
+							} // end if
 				
-				//    logic for create dynamic load more product button condition based-:  it will display every 8 product
-				if((i+1) % 8 == 0 && (i+1) < sizeOfJson) {
-					// creating div only for  more display product  button div or span (no more data availables); 
-					var moreProductDiv = document.createElement('div');
-					moreProductDiv.className = 'moreItem'; // if required will add later
-					moreProductDiv.id = tabIdName+'_moreLoad_'+id;  
-					document.getElementById(tabIdName).appendChild(moreProductDiv);
-			
-						var moreButtonId = tabIdName+'_moreLoad_'+id;
-						var nextPage = i+1;
-						// pass counter as a parameter for next 8 product
-						document.getElementById(moreButtonId).innerHTML = '<input type="button" id = "load-moreProduct"  class="more-product-button" title = "load more Product" value="LOAD MORE" onclick="displayProduct(\'' + tabIdName + '\', '+nextPage+', \'' + moreButtonId + '\')" />';
-					}
-					else if((i+1) == sizeOfJson){
-						// creating div only for  more display product  button div or span (no more data availables); 
-						var moreProductDiv = document.createElement('div');
-						moreProductDiv.className = 'moreItem'; // if required will add later
-						moreProductDiv.id = tabIdName+'_moreLoad_'+id;  
-						document.getElementById(tabIdName).appendChild(moreProductDiv);
-						console.log("no more product call");
-						// display message no more prodcut availables
-						var span = document.createElement('span');
-						span.className = "no-more-product";
-						span.style = "font-weight: bold;"
-						span.id = "no-moreProduct";
-						moreProductDiv.appendChild(span);
-						document.getElementById("no-moreProduct").innerHTML = "No More Prodcut Available";
-				
-					} // end if
-			
-				
+				}
 		      } // end for loop
-			  }else if(response.status == 500){
-                  console.log("error message"+ response.msg);
-			  }else{
-                  console.log("server down..... please check internet connection");
-			  }
-		}); // end sevice call fucntion for fetching data of product .....
-	   
    }
    // this is for display total number of cart item and disabled add to cart button based on the itemId
    function totalItemCartValue(){
 	   // 
 			var param = {};
+			//  call servcice  for fetch only cart item list
 			serviceCall('GET', displayTotalNumberItem_apiUrl, param, function(response) {
 				if(response.status == 200){
 				var totalItem = response.itemId.length;
@@ -166,12 +184,7 @@
 				document.getElementById(buttonId).disabled = true;
 				document.getElementById(buttonId).style = 'cursor: not-allowed;';
 				document.getElementById("total-item-cart").innerHTML= response.cart_totalItem ;
-				// var nodes = document.getElementById("trending_item_2").getElementsByTagName('*');
-				// for(var i = 0; i < nodes.length; i++){
-				// 	nodes[i].disabled = true;
-				// 	nodes[i].style.opacity = "0.5";
-				// 	// console.log("vffdvfdv");
-				// }
+			
 			}else if(response.status == 500){
                   console.log("error message"+ response.msg);
 			}else{
@@ -180,10 +193,15 @@
 	   });
 	  
    }
+
+   /**
+	*  this is used for fetch cart item data from DB and creat pop-up div and display fetch data item on pop-up 
+	*/
    function displayCartItem(){ 
 	//    document.getElementById("myDIV").style.opacity = "0.5";
-
-    //    document.getElementsByTagName("body")[0].style.opacity = "0.5";
+       document.getElementsByTagName("section")[0].style = "cursor: not-allowed";
+       document.getElementsByTagName("section")[0].style.opacity = "0.5";
+	//    document.getElementsByClassName('item')[0].style = 'cursor: not-allowed';
 	   // refresh page .........pop-up and again create based on json data
 	    document.getElementById('cart-pop-up-display').innerHTML = '';
 	    // varibles for id and class name
@@ -361,11 +379,13 @@
 
   // close cart item pop-up window 
   function closePopUp(){
+	    document.getElementsByTagName("section")[0].style.opacity = "";
+	    document.getElementsByTagName("section")[0].style = "";
 		document.getElementById('cart-pop-up-display').style.display = 'none';
 		document.getElementsByTagName("body")[0].style.opacity = "";
 
    }
-    // no item pop- up func
+    // if no item in cart then we will display message on pop-up ....
 	function noItemPopUP(cartContainerDiv){
 		var cartNoItemDiv = document.createElement('div');
 		cartNoItemDiv.className = "cart-no-item";
@@ -416,7 +436,6 @@
 	  }else{
 		  // disabled this button bz its reach limit value;
 		  console.log("limit cross");
-		//   document.getElementById(plus_btn_id).style = 'cursor: not-allowed;';
 	  }
 	  
    }
@@ -451,7 +470,6 @@
 		else{
 			// disabled this button bz its reach limit value;
 			console.log("limit cross");
-			// document.getElementById(minus_btn_id).style = 'cursor: not-allowed;';
 		}
    }
 //   remove item from  cart list ..
@@ -489,12 +507,11 @@
 		}
 		});
 	}
+	// this is for media device
 	function menuList() {
-		// document.getElementById("myDropdown").style.display = 'block';
 		document.getElementById("myDropdown").classList.toggle("show");
 	}
     function hideMenuList(){
-	   	// document.getElementById("myDropdown").style.display = 'none';
 		var dropdowns = document.getElementsByClassName("dropdown-content");
 		var i;
 		for (i = 0; i < dropdowns.length; i++) {
@@ -523,6 +540,7 @@
 
   function serachItem(){
 	  var tabIdName = 'search-item';
+	  var flag = false;
 	  document.getElementById('trending').style.display = 'none';
 	  document.getElementById('entertainment').style.display = 'none';
 	  document.getElementById('travel').style.display = 'none';
@@ -536,52 +554,10 @@
 				var sizeOfJson = response.tab_data.length;
 				console.log("sizeOfJson"+sizeOfJson);
 				var prodcutData = response.tab_data;
-				
-			    for(var i = 0; i < sizeOfJson ; i++){ 
-					var imageUrl = prodcutData[i].productUrl;
-					var productTitle = prodcutData[i].productTitle;
-					var prodcutPrice = prodcutData[i].productPrice; 
-					var addCartId = prodcutData[i].id;
-					var id = i.toString();	
-					//  first create outerDiv and appendChild to tabIdName (it will add based on tab id )
-					var outerDiv = document.createElement('div');
-					outerDiv.id = tabIdName+'_item_'+id;
-					outerDiv.className = 'item';
-					outerDiv.style.backgroundImage = "url('"+ imageUrl +"')";
-					document.getElementById(tabIdName).appendChild(outerDiv);
-					//  now will create another innerDiv add to parent div (outerDiv)
-					var innerDiv = document.createElement('div');
-					innerDiv.className = 'image-details';
-					outerDiv.appendChild(innerDiv);
-
-				// inside of innerDiv - : create anothe two div (one for title & price anothe for add Cart button)
-					var innerDivFirst = document.createElement('div');
-					innerDivFirst.className = 'image-title-price';
-					innerDiv.appendChild(innerDivFirst); 
-
-					// create span for  display title of product and add with innerDivFirst
-					var innerSpanFirst = document.createElement('span');
-					innerSpanFirst.className = ''; // will put class name later if required
-					innerDivFirst.appendChild(innerSpanFirst);
-					innerSpanFirst.innerHTML = "<b>Title &nbsp; &nbsp; &nbsp;"+ productTitle +"<b><br>"; // here will put prodcutImage details from json object 
-
-					// create span for display price of product and add with innerDivFirst
-					var innerSpanSecond = document.createElement('span');
-					innerSpanSecond.className = ''; // will put class name later if required
-					innerDivFirst.appendChild(innerSpanSecond);
-					innerSpanSecond.innerHTML = "<b>Price &nbsp; &nbsp; $ &nbsp;" + prodcutPrice	 + "</b>" // here will put product price details from json object 
-
-					//  cretae second div for add Cart button and add with innerDiv
-					var innerDivSecond = document.createElement('div');
-					innerDivSecond.className = ''; // will put class name after
-					innerDivSecond.id = tabIdName+'_ButtonDiv_'+id;
-					innerDiv.appendChild(innerDivSecond);   
-					// add cart button id
-					var buttonId = addCartId; // Uniqe id for all prduct
-					// pass button id as a paramter
-					document.getElementById(tabIdName+'_ButtonDiv_'+id).innerHTML = '<input type="button" id = '+ buttonId +' class="image-footer-button" title = "Add To CART" value="ADD TO CART" onclick="addToCart(\'' + buttonId + '\')" />'; 
-				
-		      } // end for loop
+				var pageProduct = 0;
+				console.log("sizeOfJson"+sizeOfJson);
+				createDiv(tabIdName, pageProduct, sizeOfJson, prodcutData, flag)
+			
 			  }else if(response.status == 500){
                   console.log("error message"+ response.msg);
 			  }else{
@@ -601,6 +577,8 @@
 		var params = {email_addess: emailAddress};
 		serviceCall('POST', email_subscribe_apiUrl, params, function(response) {
 			  if(response.status == 200){
+				  alert("successfully email subScribe");
+				  document.getElementsByClassName('email-box')[0].value = '';
 				  }else if(response.status == 500){
                   console.log("error message"+ response.msg);
 			  }else{
